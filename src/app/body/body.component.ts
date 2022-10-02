@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ProductService } from './product.service';
 
 @Component({
   selector: 'app-body',
@@ -7,9 +8,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BodyComponent implements OnInit {
 
-  constructor() { }
+  currentProduct: number = 0;
+
+  
+
+  constructor(public products: ProductService) {
+
+   }
 
   ngOnInit(): void {
+    
   }
+  updateCurrent(){
+  }
+
+
+  selectItem(){
+    this.products.viewItem = true;
+  }
+
+
 
 }

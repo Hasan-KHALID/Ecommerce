@@ -2,47 +2,31 @@
 
 <div class="container">
 <div class="card-group">
-    <div class="card">
-        <img class="card-img-top"
-            src="https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1638381193-b37250b6-0210-44d9-8722-4909b950eab9_xo6nfcmaubgtuscy.jpg"
-            alt="Card image cap">
-        <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
-                content.
-                This content is a little bit longer.</p>
+    <div class="card " *ngFor=" let item of products.products; let i = index">
+
+        <div class="btn" type="button" (click)="currentProduct = i; selectItem()">
+            <img class="card-img-top" [src]='item.image' alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">{{item.name}}</h5>
+                <p class="card-text">
+                    {{item.details}}
+                </p>
+                <p>Available <Span>{{item.amount}}</Span> </p>
+            
+            </div>
+            <div class="card-footer">
+                <small class="text-muted">Pirce: <span>{{item.price}}</span> $</small>
+            </div>
         </div>
-        <div class="card-footer">
-            <small class="text-muted">Last updated 3 mins ago</small>
-        </div>
+       
     </div>
-    <div class="card">
-        <img class="card-img-top"
-            src="https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1638381193-b37250b6-0210-44d9-8722-4909b950eab9_xo6nfcmaubgtuscy.jpg"
-            alt="Card image cap">
-        <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-        </div>
-        <div class="card-footer">
-            <small class="text-muted">Last updated 3 mins ago</small>
-        </div>
-    </div>
-    <div class="card">
-        <img class="card-img-top"
-            src="https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1638381193-b37250b6-0210-44d9-8722-4909b950eab9_xo6nfcmaubgtuscy.jpg">
-        <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
-                content.
-                This card has even longer content than the first to show that equal height action.</p>
-        </div>
-        <div class="card-footer">
-            <small class="text-muted">Last updated 3 mins ago</small>
-        </div>
-    </div>
+   
 </div>
 
 </div>
+<app-item [currentProducts]="currentProduct" *ngIf="this.products.viewItem" >
+</app-item>
+
+
 
 
