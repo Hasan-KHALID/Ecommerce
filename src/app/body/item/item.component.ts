@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, OnChanges } from '@angular/core';
+import { MyCartService } from 'src/app/my-cart.service';
 import { ProductService } from '../product.service';
 
 @Component({
@@ -13,7 +14,7 @@ export class ItemComponent implements OnInit, OnChanges {
   currentItem:any;
  
 
-  constructor( public product: ProductService) {
+  constructor( public product: ProductService, public myCart:MyCartService) {
    
 
     console.log(this.currentProducts)
@@ -27,6 +28,10 @@ export class ItemComponent implements OnInit, OnChanges {
   ngOnChanges(){
     this.currentItem = this.product.products[this.currentProducts]
 
+  }
+
+  addCart(){
+    this.myCart.addItem(this.currentItem.name,this.currentItem.image, this.currentItem.amount,this.currentItem.price)
   }
 
 

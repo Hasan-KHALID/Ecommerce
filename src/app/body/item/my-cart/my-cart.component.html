@@ -1,0 +1,22 @@
+<div class="container" >
+
+<div class="card" style="width: 18rem;" *ngFor="let mycart of myCart.myCarts; let i = index;">
+
+    <div *ngIf="i>0" >
+        <div class="card-body">
+        <h5 class="card-title">{{mycart.name}}</h5>
+        <img class="card-img-top" [src]=mycart.img alt="">
+        <a>Amount:{{mycart.amount}}.</a>
+        <a>Total Price:{{mycart.totalPrice}}.</a>
+        <button class="btn btn-primary">Order</button>
+        </div>
+
+    </div>
+    
+</div>
+
+    
+
+   
+</div>
+

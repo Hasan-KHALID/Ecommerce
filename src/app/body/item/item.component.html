@@ -14,8 +14,10 @@
         <a type="button" class="btn btn-primary">-</a>
         <span>{{currentItem.price}}</span>
         <a type="button" class="btn btn-secondary" (click)="productIxdex()">+</a>
-        <button class="btn btn-primary">Add to cart</button>
+        <button class="btn btn-primary" (click)="addCart()" >Add to cart</button>
         <a class="btn btn-danger" (click)="this.product.viewItem=!this.product.viewItem" >Cancel</a>
     </div>
 
 </div>
+
+<app-my-cart></app-my-cart>
