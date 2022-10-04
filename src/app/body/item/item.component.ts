@@ -12,6 +12,8 @@ export class ItemComponent implements OnInit, OnChanges {
   @Input() currentProducts:number = 0 ;
 
   currentItem:any;
+  amount:number= 0;
+  totalAmount: number=0;
  
 
   constructor( public product: ProductService, public myCart:MyCartService) {
@@ -27,11 +29,25 @@ export class ItemComponent implements OnInit, OnChanges {
 
   ngOnChanges(){
     this.currentItem = this.product.products[this.currentProducts]
-
   }
 
+
+  addAmount(){
+    this.amount++;
+    this.totalAmount =  this.currentItem.price * this.amount;
+    
+  }
+
+  removeAmount(){
+    this.amount--;
+    this.totalAmount =  this.currentItem.price * this.amount;
+  }
+
+
+
+
   addCart(){
-    this.myCart.addItem(this.currentItem.name,this.currentItem.image, this.currentItem.amount,this.currentItem.price)
+    this.myCart.addItem(this.currentItem.name,this.currentItem.image, this.amount,this.totalAmount)
   }
 
 

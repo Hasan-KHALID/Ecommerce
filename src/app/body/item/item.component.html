@@ -6,14 +6,15 @@
         </div>
         <div class="col-lg-6">
             <p>{{currentItem.details}}</p>
-            <h2>{{currentItem.price}}</h2>
+            <h2>{{currentItem.price | currency}}</h2>
         </div>
     </div>
 
     <div>
-        <a type="button" class="btn btn-primary">-</a>
-        <span>{{currentItem.price}}</span>
-        <a type="button" class="btn btn-secondary" (click)="productIxdex()">+</a>
+        <a type="button" *ngIf="totalAmount > 0" class="btn btn-primary" (click)="removeAmount()" >-</a>
+        <span >{{totalAmount | currency}}</span>
+        <a type="button" class="btn btn-secondary" (click)="addAmount()">+</a>
+        <a>Selected <span>{{currentItem.name}}</span>: <span>{{amount}}</span> </a>
         <button class="btn btn-primary" (click)="addCart()" >Add to cart</button>
         <a class="btn btn-danger" (click)="this.product.viewItem=!this.product.viewItem" >Cancel</a>
     </div>
