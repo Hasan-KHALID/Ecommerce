@@ -32,6 +32,13 @@ export class ProductService {
       details: "nice and comfortable",
       price: 120,
       amount: 4
+    },
+    {
+      name: "Panjabi",
+      image: "https://saralifestyle.com.bd/Files/ImageProductMain/49772782-32c8-4dbe-a39c-daad4a4ad47f.jpg",
+      details: "nice and comfortable",
+      price: 120,
+      amount: 4
     }
   ]
 

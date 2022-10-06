@@ -7,13 +7,13 @@
         <h5 class="card-title">{{mycart.name}}</h5>
         <img class="card-img-top" [src]=mycart.img alt="">
         <a>Amount:{{mycart.amount}}.</a>
-        <a>Total Price:{{mycart.totalPrice}}.</a>
-        <button class="btn btn-primary">Order</button>
+        <a>Total Price:{{mycart.totalPrice | currency}}.</a> 
         </div>
-
-    </div>
-    
+        
+    </div> 
 </div>
+    <button *ngIf="myCart.myCarts.length > 1" class="btn btn-primary" (click)="onOrder()">Order</button>
+    <H1 *ngIf="order"> Order Placed </H1>
 
     
 

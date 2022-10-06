@@ -8,9 +8,17 @@ import { MyCartService } from 'src/app/my-cart.service';
 })
 export class MyCartComponent implements OnInit {
 
+  order:boolean = false;
+
   constructor(public myCart: MyCartService) { }
 
   ngOnInit(): void {
+  }
+
+  onOrder(){
+
+    this.order = true;
+
   }
 
 }
