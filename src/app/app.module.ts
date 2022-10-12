@@ -18,7 +18,7 @@ const appRoutes: Routes = [
     path:'mycart' , component: MyCartComponent
   },
   {
-    path:'item', component:ItemComponent
+    path:'item', component: ItemComponent
   }
 
 ]

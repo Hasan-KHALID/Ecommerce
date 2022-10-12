@@ -1,35 +1,52 @@
 <!-- body -->
 
 <div class="container pt-4">
-<div class="row row-cols-1 row-cols-md-3 g-4" >
-    <div class=" card col card border-success bg-light m-2" style="width:400px" *ngFor=" let item of products.products; let i = index">
 
-        <div class="btn" type="button" (click)="currentProduct = i; selectItem()">
-            <img class="card-img" style="width:150px; height: 150px;"  [src]='item.image' alt="Card image cap">
-            <div class="card-body">
-                <h5 class="card-title">{{item.name}}</h5>
-                <p class="card-text">
-                    {{item.details}}
-                </p>
-                <p>Available <Span>{{item.amount}}</Span> </p>
+    <div class="row">
+        <div class="col-8">
+
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                <div class=" card col card border-success bg-light m-2" style="width:400px"
+                    *ngFor=" let item of products.products; let i = index">
+            
+                    <div class="btn" type="button" (click)="currentProduct = i; selectItem()">
+                        <img class="card-img" style="width:150px; height: 150px;" [src]='item.image' alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">{{item.name}}</h5>
+                            <p class="card-text">
+                                {{item.details}}
+                            </p>
+                            <p>Available <Span>{{item.amount}}</Span> </p>
+            
+                        </div>
+                        <div class="card-footer">
+                            <small class="text-muted">Pirce: <span>{{item.price | currency}}</span></small>
+                        </div>
+                    </div>
+            
+                </div>
             
             </div>
-            <div class="card-footer">
-                <small class="text-muted">Pirce: <span>{{item.price | currency}}</span></small>
-            </div>
+
+
         </div>
-       
+
+        <div class="col-4">
+
+            <app-item [currentProducts]="currentProduct" *ngIf="this.products.viewItem">
+            </app-item>
+
+        </div>
     </div>
-   
-</div>
+
+
 
 </div>
 
 <!-- <router-outlet></router-outlet> -->
 
 
-<app-item [currentProducts]="currentProduct" *ngIf="this.products.viewItem">
-</app-item>
+
 
 
 

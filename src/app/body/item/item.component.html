@@ -1,24 +1,30 @@
-<div class="container">
-    <h1>{{currentItem.name}}</h1>
-    <div class="row card">
-        <div class="col-lg-6">
-            <img class="card-img-top" style="width:350px; height: 350px;" [src]="currentItem.image" alt="image">
-        </div>
-        <div class="col-lg-6">
-            <p>{{currentItem.details}}</p>
-            <h2>{{currentItem.price | currency}}</h2>
-        </div>
-    </div>
+<div class="container pt-4 ">
 
-    <div class="p-3">
-        <a type="button" *ngIf="totalAmount > 0" class="btn btn-primary m-2" (click)="removeAmount()" >-</a>
-        <span >{{totalAmount | currency}}</span>
-        <a type="button" class="btn btn-secondary m-2" (click)="addAmount()">+</a>
-        <a>Selected <span>{{currentItem.name}}</span>: <span>{{amount}}</span> </a>
-        <button class="btn btn-primary m-2" (click)="addCart()" >Add to cart</button>
-        <a class="btn btn-danger m-2" (click)="this.product.viewItem=!this.product.viewItem" >Cancel</a>
-    </div>
+    <div class="position-sticky">
 
+        <h1>{{currentItem.name}}</h1>
+        <div class="row card">
+            <div class="col-lg-6">
+                <img class="card-img-top" style="width:350px; height: 350px;" [src]="currentItem.image" alt="image">
+            </div>
+            <div class="col-lg-6">
+                <p>{{currentItem.details}}</p>
+                <h2>{{currentItem.price | currency}}</h2>
+            </div>
+        </div>
+        
+        <div class="p-3">
+            <a type="button" *ngIf="totalAmount > 0" class="btn btn-primary m-2" (click)="removeAmount()">-</a>
+            <span>{{totalAmount | currency}}</span>
+            <a type="button" class="btn btn-secondary m-2" (click)="addAmount()">+</a>
+            <a>Selected <span>{{currentItem.name}}</span>: <span>{{amount}}</span> </a>
+            <button class="btn btn-primary m-2" (click)="addCart()">Add to cart</button>
+            <a class="btn btn-danger m-2" (click)="this.product.viewItem=!this.product.viewItem">Cancel</a>
+        </div>
+
+
+    </div>
+   
 </div>
 
 <!-- <app-my-cart></app-my-cart> -->

@@ -23,11 +23,14 @@ export class ItemComponent implements OnInit, OnChanges {
    }
 
   ngOnInit(): void {
+
+    // this.route.navigate(['item'])
      
   }
 
   ngOnChanges(){
     this.currentItem = this.product.products[this.currentProducts]
+    // this.route.navigate(['item'])
   }
 
 
@@ -46,8 +49,9 @@ export class ItemComponent implements OnInit, OnChanges {
 
 
   addCart(){
-    this.myCart.addItem(this.currentItem.name,this.currentItem.image, this.amount,this.totalAmount)
+    this.myCart.addItem(this.currentItem.name,this.currentItem.image, this.amount,this.totalAmount, this.currentItem.Id)
     this.route.navigate(['mycart'])
+    console.log(this.currentItem.Id)
   }
     
   
