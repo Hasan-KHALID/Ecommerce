@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, OnChanges } from '@angular/core';
 import { MyCartService } from 'src/app/my-cart.service';
 import { ProductService } from '../product.service';
+import { Router } from '@angular/router'
 
 @Component({
   selector: 'app-item',
@@ -16,10 +17,8 @@ export class ItemComponent implements OnInit, OnChanges {
   totalAmount: number=0;
  
 
-  constructor( public product: ProductService, public myCart:MyCartService) {
+  constructor( public product: ProductService, public myCart:MyCartService, public route:Router) {
    
-
-    console.log(this.currentProducts)
      
    }
 
@@ -48,11 +47,7 @@ export class ItemComponent implements OnInit, OnChanges {
 
   addCart(){
     this.myCart.addItem(this.currentItem.name,this.currentItem.image, this.amount,this.totalAmount)
-  }
-
-
-  productIxdex(){
-    console.log(this.currentProducts)
+    this.route.navigate(['mycart'])
   }
     
   

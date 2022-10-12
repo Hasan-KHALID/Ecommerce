@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from './product.service';
+import { Router } from '@angular/router'
 
 @Component({
   selector: 'app-body',
@@ -12,7 +13,7 @@ export class BodyComponent implements OnInit {
 
   
 
-  constructor(public products: ProductService) {
+  constructor(public products: ProductService, public router: Router) {
 
    }
 
@@ -25,6 +26,7 @@ export class BodyComponent implements OnInit {
 
   selectItem(){
     this.products.viewItem = true;
+    // this.router.navigate(['item'])
   }
 
 

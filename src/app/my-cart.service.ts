@@ -9,7 +9,7 @@ export class MyCartService {
 
   myCarts =[
     {
-      name:"",
+      name:"No item selected",
       img: "",
       amount:0,
       totalPrice:0

@@ -2,17 +2,20 @@
 
 <div class="card" style="width: 18rem;" *ngFor="let mycart of myCart.myCarts; let i = index;">
 
-    <div *ngIf="i>0" >
-        <div class="card-body">
+    <div  *ngIf="i>0" >
+        <div class="card">
         <h5 class="card-title">{{mycart.name}}</h5>
         <img class="card-img-top" [src]=mycart.img alt="">
-        <a>Amount:{{mycart.amount}}.</a>
-        <a>Total Price:{{mycart.totalPrice | currency}}.</a> 
+        <div  >
+            <a class="m-3">Amount:{{mycart.amount}}.</a>
+            <a class="m-3">Total Price:{{mycart.totalPrice | currency}}.</a>
+        </div>
+        
         </div>
         
     </div> 
 </div>
-    <button *ngIf="myCart.myCarts.length > 1" class="btn btn-primary" (click)="onOrder()">Order</button>
+    <button *ngIf="myCart.myCarts.length > 1" class="btn btn-primary m-3" (click)="onOrder()">Order</button>
     <H1 *ngIf="order"> Order Placed </H1>
 
     
