@@ -23,4 +23,10 @@ export class MyCartService {
 
   }
 
+  removeItem(){
+     while (this.myCarts.length > 1) {
+    this.myCarts.pop();
+  }
+  }
+
 }

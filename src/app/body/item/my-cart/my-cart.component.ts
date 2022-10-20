@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { MyCartService } from 'src/app/my-cart.service';
 
 @Component({
@@ -10,7 +11,7 @@ export class MyCartComponent implements OnInit {
 
   order:boolean = false;
 
-  constructor(public myCart: MyCartService) { }
+  constructor(public myCart: MyCartService, public route: Router) { }
 
   ngOnInit(): void {
   }
@@ -18,6 +19,8 @@ export class MyCartComponent implements OnInit {
   onOrder(){
 
     this.order = true;
+    this.myCart.removeItem()
+    this.route.navigate(['order'])
 
   }
 

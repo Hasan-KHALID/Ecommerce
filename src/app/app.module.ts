@@ -20,6 +20,9 @@ const appRoutes: Routes = [
   },
   {
     path:'item', component: ItemComponent
+  },
+  {
+    path: 'order', component: OrderComponent
   }
 
 ]
